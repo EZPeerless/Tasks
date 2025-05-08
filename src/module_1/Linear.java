@@ -2,7 +2,11 @@ package module_1;
 
 public class Linear {
     public static void main(String[] args) {
-        task2(4, 2, 2);
+        task1(1, 3, 8);
+        task2(7, 8, 2);
+        task3(5, 9);
+        task4(767.998);
+        task5(125753434);
     }
 
     public static void method1(int number) {
@@ -11,7 +15,7 @@ public class Linear {
 
     public static void task1(double a, double b, double c) {
         double z = ((a - 3) * b / 2) + c;
-        System.out.println(z);
+        System.out.println("Task 1: " + z);
     }
 
     public static void task2(double a, double b, double c) {
@@ -21,14 +25,32 @@ public class Linear {
         double res4 = res2 / res3; // Трансформация дроби в число
         double res5 = Math.pow(a, 3) * c + Math.pow(b, -3);
         double res6 = res4 - res5;
-
-
         // System.out.println((b+res1)/2*a); // Вывод результата пристрелки
-        System.out.println(res6);
-       /* double step = Math.pow(b, 4);
+        System.out.println("Task 2: " + res6);
+        /* double step = Math.pow(b, 4);
         System.out.println("Степень числа " + step);
         System.out.println("Корень из " + Math.sqrt(step)); */ // Чисто пристрелка
     }
 
+    public static void task3(double x, double y) {
+        double all = ((Math.sin(x) + Math.cos(y)) / (Math.cos(x) - Math.sin(y))) * (Math.tan(x * y));
+        System.out.println("Task 3: " + all);
+    }
+
+    public static void task4(double R) {
+        double x = (int) R; // приводим переменную R к целочисленному значению
+        double escape = (R - x) * 1000 + (x / 1000); // сам процесс (^_^)
+        String result = String.format("%.3f", escape); // оганичиваем колличество знаков после точки до 3х
+        System.out.println("Task 4: " + result);
+    }
+
+    private static void task5(int T) {
+        int time = T / 1000; // Переводим миллисекнудны в секунды
+        int hours = time / 3600;
+        int minute = (time - (hours * 3600)) / 60;
+        int seconds = (time - (hours * 3600)) - minute * 60;
+        System.out.println("Task 5: " + hours + "ч " + minute + "мин " + seconds + "с");
+    }
 }
+
 
