@@ -7,7 +7,7 @@ public class Linear {
         task3(5, 9);
         task4(767.998);
         task5(125753434);
-        task6(0, 4);
+        task6(2, -1,0.5);
     }
 
     public static void method1(int number) {
@@ -53,11 +53,13 @@ public class Linear {
         System.out.println("Task 5: " + hours + "ч " + minute + "мин " + seconds + "с");
     }
 
-    private static void task6(double x, double y) {
+    private static void task6(double x, double y, double size) {
 
-        if (y >= -3 && y < 0 && x >= -4 && x <= 4) {
+        // переменная size - устанавливает шаг сетки координат
+
+        if (y >= -3*size && y < 0 && x >= -4*size && x <= 4*size) {
             System.out.println("Task 5: " + true);
-        } else if (y >= 0 && y <= 4 && x >= -2 && x <= 2) {
+        } else if (y >= 0 && y <= 4*size && x >= -2*size && x <= 2*size) {
             System.out.println("Task 5: " + true);
         } else {
             System.out.println("Task 5: " + false);
