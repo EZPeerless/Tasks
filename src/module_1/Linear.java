@@ -7,6 +7,7 @@ public class Linear {
         task3(5, 9);
         task4(767.998);
         task5(125753434);
+        task6(0, 4);
     }
 
     public static void method1(int number) {
@@ -50,6 +51,17 @@ public class Linear {
         int minute = (time - (hours * 3600)) / 60;
         int seconds = (time - (hours * 3600)) - minute * 60;
         System.out.println("Task 5: " + hours + "ч " + minute + "мин " + seconds + "с");
+    }
+
+    private static void task6(double x, double y) {
+
+        if (y >= -3 && y < 0 && x >= -4 && x <= 4) {
+            System.out.println("Task 5: " + true);
+        } else if (y >= 0 && y <= 4 && x >= -2 && x <= 2) {
+            System.out.println("Task 5: " + true);
+        } else {
+            System.out.println("Task 5: " + false);
+        }
     }
 }
 
