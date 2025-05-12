@@ -1,5 +1,3 @@
-package module_1;
-
 public class Branching {
 
     public static void main(String[] args) {
