@@ -6,7 +6,8 @@ public class Branching {
         task1(30, 60);
         task2(98, 300, 56, 90);
         task3(1, 1, 2, 2, 3, 3);
-        task4(15,20, 25, 12,6.5);
+        task4(15, 20, 25, 12, 6.5);
+        task5(-3);
     }
 
     public static void task1(double a, double b) {
@@ -45,6 +46,22 @@ public class Branching {
     }
 
     public static void task4(double A, double B, double x, double y, double z) {
+        if (A > x && B > y || A > x && B > z || A > y && B > z) {
+            System.out.println("Task 4: Кирпич проходит");
+        } else {
+            System.out.println("Task 4: Кирпич не проходит");
+        }
+    }
 
+    public static void task5(double x) {
+        double F1;
+        double F2;
+        F1 = (x * x) - (3 * x) + 9;
+        F2 = 1 / (Math.pow(x, 3) + 6);
+        if (x <= 3) {
+            System.out.println("Task 5: F(x)=" + F1);
+        } else {
+            System.out.println("Task 5: F(x)=" + F2);
+        }
     }
 }
