@@ -1,5 +1,7 @@
 package module_1;
 
+import java.text.DecimalFormat;
+
 public class Branching {
 
     public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class Branching {
         task2(98, 300, 56, 90);
         task3(1, 1, 2, 2, 3, 3);
         task4(15, 20, 25, 12, 6.5);
-        task5(-3);
+        task5(-3.3456);
     }
 
     public static void task1(double a, double b) {
@@ -56,12 +58,16 @@ public class Branching {
     public static void task5(double x) {
         double F1;
         double F2;
-        F1 = (x * x) - (3 * x) + 9;
+        F1 = Math.pow(x, 2)- 3 * x + 9 ;
         F2 = 1 / (Math.pow(x, 3) + 6);
+        DecimalFormat decimalFormat = new DecimalFormat("#.#####");
+        String res1 = decimalFormat.format(F1);
+        String res2 = decimalFormat.format(F2);
+
         if (x <= 3) {
-            System.out.println("Task 5: F(x)=" + F1);
+            System.out.println("Task 5: F(x)=" + res1);
         } else {
-            System.out.println("Task 5: F(x)=" + F2);
+            System.out.println("Task 5: F(x)=" + res2);
         }
     }
 }
