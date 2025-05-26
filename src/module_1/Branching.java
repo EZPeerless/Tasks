@@ -16,18 +16,9 @@ public class Branching {
         double result = a + b;
         double triangle = 180;
         double c = triangle - result;
-        String message;
-        if (a + b >= triangle || c <= 0) {
-            message = ("Task 1: Треугольника не существует");
-        } else {
-            message = ("Task 1: Треугольник существует");
-            if (a == 90 || b == 90 || c == 90) {
-                message+= ( ", он прямоугольный");
-            } else {
-                message = ("");
-            }
-        }
-        return message;
+        if (a + b >= 180 || c <= 0)
+            return "Task 1: Треугольника не существует";
+        return "Task 1: Треугольник существует" + ((a == 90 || b == 90 || c == 90) ? ", он прямоугльный" : "");
     }
 
     public static String task2(double a, double b, double c, double d) {
@@ -59,7 +50,7 @@ public class Branching {
     public static String task5(double x) {
         double F1;
         double F2;
-        F1 = Math.pow(x, 2)- 3 * x + 9 ;
+        F1 = Math.pow(x, 2) - 3 * x + 9;
         F2 = 1 / (Math.pow(x, 3) + 6);
         DecimalFormat decimalFormat = new DecimalFormat("#.#####");
         String res1 = decimalFormat.format(F1);
