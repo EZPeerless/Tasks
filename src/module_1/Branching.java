@@ -12,6 +12,11 @@ public class Branching {
         System.out.println(task5(-3.3456));
     }
 
+    /*
+    Задание 1.
+    Даны два угла треугольника (в градусах). Определить, существует ли такой треугольник, и если да, то будет
+    ли он прямоугольным.
+     */
     public static String task1(double a, double b) {
         double result = a + b;
         double triangle = 180;
@@ -21,6 +26,10 @@ public class Branching {
         return "Task 1: Треугольник существует" + ((a == 90 || b == 90 || c == 90) ? ", он прямоугльный" : "");
     }
 
+    /*
+    Задание 2.
+    Найти { min (a , b), min (c, d) }
+     */
     public static String task2(double a, double b, double c, double d) {
         double fline = Math.min(a, b);
         double sline = Math.min(c, d);
@@ -28,6 +37,10 @@ public class Branching {
 
     }
 
+    /*
+    Задание 3.
+    Даны три точки A(x1, y1), B(x2, y2), C(x3, y3). Определить, будут ли они расположены на одной прямой.
+     */
     public static String task3(double x1, double y1, double x2, double y2, double x3, double y3) {
         double x = (-x1) / (x2 - x1);
         double y = (-y1) / (y2 - y1);
@@ -39,6 +52,11 @@ public class Branching {
         }
     }
 
+    /*
+    Задание 4.
+    Заданы размеры A, B прямоугольного отверстия и размеры x, y, z кирпича. Определить, пройдет ли кирпич
+    через отверстие.
+     */
     public static String task4(double A, double B, double x, double y, double z) {
         if (A > x && B > y || A > x && B > z || A > y && B > z) {
             return ("Task 4: Кирпич проходит");
@@ -47,6 +65,10 @@ public class Branching {
         }
     }
 
+    /*
+    Задание 5.
+    Вычислить значение функции:
+     */
     public static String task5(double x) {
         double F1;
         double F2;

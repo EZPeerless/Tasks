@@ -14,10 +14,18 @@ public class Linear {
         System.out.println("Hello" + number);
     }
 
+    /*
+    Задание 1.
+    Найдите значение функции: z = ((a-3)*b/2)+c
+     */
     public static double task1(double a, double b, double c) {
         return  ((a - 3) * b / 2) + c;
     }
 
+    /*
+    Задание 2.
+    Вычислить значение выражения по формуле (все переменные принимают действительное значение)
+     */
     public static double task2(double a, double b, double c) {
         double res1 = Math.sqrt(Math.pow(b, 2) + 4 * a * c);
         double res2 = b + res1;
@@ -27,16 +35,32 @@ public class Linear {
         return res4 - res5;
     }
 
+    /*
+    Задание 3.
+    Вычислить значение выражения по формуле (все переменные принимают действительные значения):
+    ((sinx + cosx) / (cosx - sinx)) * tgxy
+     */
     public static double task3(double x, double y) {
         return ((Math.sin(x) + Math.cos(y)) / (Math.cos(x) - Math.sin(y))) * (Math.tan(x * y));
     }
 
+    /*
+    Задание 4.
+    Дано действительное число R вида nnn.ddd (три цифровых разряда в дробной и целой частях). Поменять местами
+    дробную и целую части числа и вывести полученное значение числа.
+     */
     public static String task4(double R) {
         double x = (int) R;
         double escape = (R - x) * 1000 + (x / 1000);
         return String.format("%.3f", escape);
     }
 
+    /*
+    Задание 5.
+    Дано натуральное число T, которое представляет длительность прошедшего времени в секундах. Вывести данное
+    значение длительности в часах, минутах и секундах в следующей форме:
+    HHч MMмин SSс.
+     */
     private static String task5(int T) {
         int time = T / 1000;
         int hours = time / 3600;
@@ -45,6 +69,11 @@ public class Linear {
         return (hours + "ч " + minute + "мин " + seconds + "с");
     }
 
+    /*
+    Задание 6.
+    Для данной области составить линейную программу, которая печатает true, если точка с координатами (x, y)
+    принадлежит закрашенной области, и false - в противном случае
+     */
     private static String task6(double x, double y, double size) {
 
         if (y >= -3*size && y < 0 && x >= -4*size && x <= 4*size) {
