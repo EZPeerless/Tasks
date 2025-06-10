@@ -10,7 +10,7 @@ public class Cycles {
         System.out.println("Task 2: " + task2(8, 14, 0.5));
         System.out.println("Task 3: " + task3(1, 100, 2));
         System.out.println("Task 4: " + task4(1, 200, 2));
-        System.out.println("Task 5: " + task5(4));
+        System.out.println("Task 5: " + task5(35, 26));
     }
 
     /*
@@ -71,8 +71,18 @@ public class Cycles {
     Даны числовой ряд и некоторое число e. Найти сумму тех членов ряда, модуль которых больше или
     равен заданному e. Общий член ряда имеет вид:
      */
-    public static int task5(int e) {
-
+    public static double task5(double end, double e) {
+        // a=(1/2^n)+(1/3^n)
+        double summa = 0;
+        for (double n = 1; n <= end; n++) {
+            double a = (1 / Math.pow( 2, n )) + (1 /Math.pow( 3, n));
+            System.out.println("A ="+a+":   N ="+n);
+            if (Math.abs(a) >= Math.abs(e)) {
+                summa += a;
+                System.out.println("N - "+n+";"+"A =:"+a+":"+" ="+summa);
+                System.out.println(" ");
+            }
+        }
+        return summa;
     }
-
 }
