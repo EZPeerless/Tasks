@@ -3,6 +3,7 @@ package module_1;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Cycles {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class Cycles {
         System.out.println("Task 3: " + task3(1, 100, 2));
         System.out.println("Task 4: " + task4(1, 200, 2));
         System.out.println("Task 5: " + task5(35, 26));
+        task6();
     }
 
     /*
@@ -72,17 +74,43 @@ public class Cycles {
     равен заданному e. Общий член ряда имеет вид:
      */
     public static double task5(double end, double e) {
-        // a=(1/2^n)+(1/3^n)
         double summa = 0;
         for (double n = 1; n <= end; n++) {
             double a = (1 / Math.pow( 2, n )) + (1 /Math.pow( 3, n));
-            System.out.println("A ="+a+":   N ="+n);
+                // System.out.println("A ="+a+":   N ="+n);
             if (Math.abs(a) >= Math.abs(e)) {
                 summa += a;
-                System.out.println("N - "+n+";"+"A =:"+a+":"+" ="+summa);
-                System.out.println(" ");
+                // System.out.println("N - "+n+";"+"A =:"+a+":"+" ="+summa);
+                // System.out.println(" ");
             }
         }
         return summa;
     }
+
+    /*
+    Задание 6.
+    Вывести на экран соответствия между символами и их численными обозначениями в памяти компьютера.
+     */
+    public static void task6() {
+        Scanner input = new Scanner(System.in);
+        char[] charArray;
+        charArray = new char [15];
+        System.out.println("Введите символ: ");
+        charArray=
+
+        String userInputString = " " + userInput;
+        if (userInput.length() > 15) {
+            System.out.println("Меньше текста брат");
+        } else {
+            for (char reuse : charArray) {
+                System.out.println(reuse);
+            }
+        }
+
+
+
+        System.out.print("Task 6: " + userInput);
+    }
+
+
 }
