@@ -11,8 +11,10 @@ public class Cycles {
         System.out.println("Task 2: " + task2(8, 14, 0.5));
         System.out.println("Task 3: " + task3(1, 100, 2));
         System.out.println("Task 4: " + task4(1, 200, 2));
-        System.out.println("Task 5: " + task5(35, 26));
+        System.out.println("Task 5: " + task5(37));
         task6();
+        task7();
+        task8();
     }
 
     /*
@@ -73,15 +75,14 @@ public class Cycles {
     Даны числовой ряд и некоторое число e. Найти сумму тех членов ряда, модуль которых больше или
     равен заданному e. Общий член ряда имеет вид:
      */
-    public static double task5(double end, double e) {
+    public static double task5(double e) {
         double summa = 0;
-        for (double n = 1; n <= end; n++) {
-            double a = (1 / Math.pow( 2, n )) + (1 /Math.pow( 3, n));
-                // System.out.println("A ="+a+":   N ="+n);
+        for (double n = 1; ; n++) {
+            double a = (1 / Math.pow(2, n)) + (1 / Math.pow(3, n));
             if (Math.abs(a) >= Math.abs(e)) {
                 summa += a;
-                // System.out.println("N - "+n+";"+"A =:"+a+":"+" ="+summa);
-                // System.out.println(" ");
+            } else {
+                break;
             }
         }
         return summa;
@@ -93,24 +94,69 @@ public class Cycles {
      */
     public static void task6() {
         Scanner input = new Scanner(System.in);
-        char[] charArray;
-        charArray = new char [15];
-        System.out.println("Введите символ: ");
-        charArray=
+        System.out.print("Task 6: Введите символ: ");
+        String inputLine = input.nextLine();
+        int lenghtInput = inputLine.length();
+        char chararray[] = new char[lenghtInput];
+        System.out.println("Task 6: ");
+        for (int i = 0; i < lenghtInput; i++) {
+            chararray[i] = inputLine.charAt(i);
+            System.out.println(chararray[i] + " " + i + " " + " " + (int) inputLine.charAt(i));// .charAt(i);
+        }
+    }
 
-        String userInputString = " " + userInput;
-        if (userInput.length() > 15) {
-            System.out.println("Меньше текста брат");
-        } else {
-            for (char reuse : charArray) {
-                System.out.println(reuse);
+    /*
+    Задание 7.
+    Для каждого натурального числа в промежутке от m до n вывести все делители, кроме единицы и самого
+    числа. m и n вводятся с клавиатуры.
+     */
+    public static void task7() {
+        System.out.println("Task 7:");
+        Scanner m = new Scanner(System.in);
+        System.out.print("Введите число, с которого начинать подбор: ");
+        int mInput = m.nextInt();
+        Scanner n = new Scanner(System.in);
+        System.out.print("ВВедите число на котором закончится подбор: ");
+        int nInput = n.nextInt();
+        for (; mInput <= nInput; mInput++) {
+            System.out.println("Task 7: Делители числа: " + mInput);
+            for (int divider = 2; divider < mInput; divider++) {
+                int remains = mInput % divider;
+                if (remains == 0) {
+                    System.out.print(" " + divider + ";");
+                }
+            }
+            System.out.println(" ");
+        }
+    }
+
+    /*
+    Задание 8.
+    Даны два числа. Определить цифры, входящие в запись как первого, так и второго числа.
+     */
+    public static void task8() {
+        Scanner first = new Scanner(System.in);
+        System.out.print("Task 8: Введите первое число");
+        int firstNumber = first.nextInt();
+        int firstLength = String.valueOf(firstNumber).length();
+        int firstarray[] = new int[firstLength];
+        for (int i = 0; i <= firstLength; i++) {
+            firstarray[i] = first.nextInt();
+        }
+        Scanner second = new Scanner(System.in);
+        System.out.print("Task 8: Введите второе число");
+        int secondNumber = second.nextInt();
+        int secondLength = String.valueOf(secondNumber).length();
+        int secondarray[] = new int[secondLength];
+        for (int i = 0; i <= secondLength; i++) {
+            secondarray[i] = second.nextInt();
+        }
+        int i=0;
+        int y=0;
+        for (; i<=firstLength; i++){
+
             }
         }
 
-
-
-        System.out.print("Task 6: " + userInput);
     }
-
-
-}
+    // конец класса
