@@ -136,27 +136,47 @@ public class Cycles {
      */
     public static void task8() {
         Scanner first = new Scanner(System.in);
-        System.out.print("Task 8: Введите первое число");
-        int firstNumber = first.nextInt();
-        int firstLength = String.valueOf(firstNumber).length();
-        int firstarray[] = new int[firstLength];
-        for (int i = 0; i <= firstLength; i++) {
-            firstarray[i] = first.nextInt();
-        }
-        Scanner second = new Scanner(System.in);
-        System.out.print("Task 8: Введите второе число");
-        int secondNumber = second.nextInt();
-        int secondLength = String.valueOf(secondNumber).length();
-        int secondarray[] = new int[secondLength];
-        for (int i = 0; i <= secondLength; i++) {
-            secondarray[i] = second.nextInt();
-        }
-        int i=0;
-        int y=0;
-        for (; i<=firstLength; i++){
+        System.out.print("Task 8: Введите первое число: ");
+        String firstNumber = first.nextLine();
+        int firstLength = firstNumber.length();
 
+        Scanner second = new Scanner(System.in);
+        System.out.print("Task 8: Введите второе число: ");
+        String secondNumber = second.nextLine();
+        int secondLength = secondNumber.length();
+        System.out.print("Цифра: ");
+
+        String printed = "";
+
+        if (firstLength<secondLength){
+            for (int i = 0; i < firstLength; i++) {
+                char one = firstNumber.charAt(i);
+                for (int y = 0; y < secondLength; y++) {
+                    int two = secondNumber.charAt(y);
+                    if (one == two && printed.indexOf(one) == -1) {
+                        int num = Character.getNumericValue(one);
+                        System.out.print(num);
+                        printed += num;
+                        break;
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < secondLength; i++) {
+                int one = secondNumber.charAt(i);
+                for (int y = 0; y < firstLength; y++) {
+                    char two = firstNumber.charAt(y);
+                    if (one == two && printed.indexOf(one) == -1) {
+                        int num = Character.getNumericValue(one);
+                        System.out.print(num);
+                        printed += num;
+                        break;
+                    }
+                }
             }
         }
 
     }
-    // конец класса
+
+}
+// конец класса
