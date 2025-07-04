@@ -14,7 +14,7 @@ public class Cycles {
         System.out.println("Task 5: " + task5(37));
         task6();
         task7();
-        task8();
+        System.out.println("Task 8: " + task8());
     }
 
     /*
@@ -134,7 +134,7 @@ public class Cycles {
     Задание 8.
     Даны два числа. Определить цифры, входящие в запись как первого, так и второго числа.
      */
-    public static void task8() {
+    public static String task8() {
         Scanner first = new Scanner(System.in);
         System.out.print("Task 8: Введите первое число: ");
         String firstNumber = first.nextLine();
@@ -144,7 +144,6 @@ public class Cycles {
         System.out.print("Task 8: Введите второе число: ");
         String secondNumber = second.nextLine();
         int secondLength = secondNumber.length();
-        System.out.print("Цифра: ");
 
         String printed = "";
 
@@ -175,7 +174,7 @@ public class Cycles {
                 }
             }
         }
-
+        return printed;
     }
 
 }
